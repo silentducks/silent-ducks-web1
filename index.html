@@ -49,8 +49,8 @@
   nav.scrolled { background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(245,197,24,0.15); }
 
   .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-  .nav-logo-duck { height: 46px; width: auto; filter: drop-shadow(0 0 10px rgba(0,180,255,0.5)); }
-  .nav-logo-text { height: 28px; width: auto; }
+  .nav-logo-duck { height: 70px; width: auto; filter: drop-shadow(0 0 10px rgba(0,180,255,0.5)); transform: translateY(-16px); }
+  .nav-logo-text { height: 40px; width: auto; display: none; }
 
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
@@ -210,7 +210,7 @@
   /* FOOTER */
   footer { background: #000; border-top: 1px solid rgba(245,197,24,0.1); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
   .footer-logo { display: flex; align-items: center; gap: 10px; }
-  .footer-logo-duck { height: 36px; width: auto; filter: drop-shadow(0 0 6px rgba(0,180,255,0.4)); }
+  .footer-logo-duck { height: 60px; width: auto; filter: drop-shadow(0 0 6px rgba(0,180,255,0.4)); }
   .footer-logo-text { height: 22px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
   .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
   .footer-loc { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 3px; color: var(--blue); text-transform: uppercase; }
@@ -418,7 +418,7 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
 <footer>
   <div class="footer-logo">
     <img class="footer-logo-duck" id="footerDuck" src="" alt="">
-    <img class="footer-logo-text" id="footerText" src="" alt="Silent Ducks">
+    <img class="footer-logo-text" id="footerText" src="" alt="Silent Ducks" style="display:none;">
   </div>
   <div class="footer-copy">© 2026 Silent Ducks. All rights reserved.</div>
   <div class="footer-loc">📍 Luxembourg</div>
@@ -428,12 +428,12 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
   // Inject real logos
   document.getElementById('navDuck').src = "images/logo alargado blanco.png";
   document.getElementById('navText').src = "images/Pato azul.png";
-  document.getElementById('heroDuck').src = "images";
+  document.getElementById('heroDuck').src = "images/logo_transparent.png";
   document.getElementById('heroText').src = lettersSrc;
-  document.getElementById('eventsTitle').src = lettersSrc;
+  document.getElementById('eventsTitle').src = "images/logo alargado blanco.png";
   document.getElementById('setsTitle').src = lettersSrc;
   document.getElementById('socialTitle').src = lettersSrc;
-  document.getElementById('footerDuck').src = duckSrc;
+  document.getElementById('footerDuck').src = "images/logo alargado blanco.png";
   document.getElementById('footerText').src = lettersSrc;
 
   // Custom cursor
