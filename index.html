@@ -50,7 +50,7 @@
 
   .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .nav-logo-duck { height: 46px; width: auto; filter: drop-shadow(0 0 10px rgba(0,180,255,0.5)); }
-  .nav-logo-text { height: 28px; width: auto; filter: brightness(0) invert(1); }
+  .nav-logo-text { height: 28px; width: auto; }
 
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
@@ -242,7 +242,7 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">
-    <img class="nav-logo-duck" id="navDuck" src="C:\Users\cuadr\Desktop\Silent Ducks" alt="Silent Ducks">
+    <img class="nav-logo-duck" id="navDuck" src="" alt="Silent Ducks">
     <img class="nav-logo-text" id="navText" src="" alt="Silent Ducks">
   </a>
   <ul class="nav-links">
@@ -426,9 +426,9 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
 
 <script>
   // Inject real logos
-  document.getElementById('navDuck').src = duckSrc;
-  document.getElementById('navText').src = lettersSrc;
-  document.getElementById('heroDuck').src = duckSrc;
+  document.getElementById('navDuck').src = "images/logo alargado blanco.png";
+  document.getElementById('navText').src = "images/Pato azul.png";
+  document.getElementById('heroDuck').src = "images";
   document.getElementById('heroText').src = lettersSrc;
   document.getElementById('eventsTitle').src = lettersSrc;
   document.getElementById('setsTitle').src = lettersSrc;
