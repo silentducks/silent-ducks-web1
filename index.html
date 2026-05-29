@@ -153,7 +153,8 @@
 
   .past-section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 6px; color: rgba(255,255,255,0.25); text-transform: uppercase; margin-bottom: 20px; }
   .past-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
-  .past-item { aspect-ratio: 1; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; position: relative; overflow: hidden; transition: border-color 0.3s; cursor: none; }
+  .past-item { aspect-ratio: 2/3; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; position: relative; overflow: hidden; transition: border-color 0.3s; cursor: none; gap: 8px; }
+  .past-item img { width: 100%; max-height: 100%; object-fit: cover; display: block; }
   .past-item::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,180,255,0.08) 0%, transparent 70%); opacity: 0; transition: opacity 0.3s; }
   .past-item:hover { border-color: rgba(0,180,255,0.3); }
   .past-item:hover::before { opacity: 1; }
@@ -200,15 +201,25 @@
   .social-tagline-img { height: clamp(50px, 7vw, 80px); width: auto; filter: brightness(0) invert(1); display: block; margin: 0 auto 12px; }
   .social-sub { font-size: 0.9rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 48px; max-width: 400px; margin-left: auto; margin-right: auto; }
   .social-icons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-  .social-card { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 32px; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; color: #fff; transition: border-color 0.3s, transform 0.3s; min-width: 130px; }
+  .social-card { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 32px; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; color: #fff; transition: border-color 0.3s, transform 0.3s; width: 160px; }
   .social-card:hover { transform: translateY(-4px); }
   .social-card.ig:hover { border-color: rgba(225,48,108,0.5); }
   .social-card.sc:hover { border-color: rgba(255,102,0,0.5); }
   .social-card.tt:hover { border-color: rgba(0,242,234,0.5); }
+  .social-card.yt:hover { border-color: rgba(255,0,0,0.5); }
   .social-card-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
   .social-card-icon svg { width: 32px; height: 32px; fill: #fff; }
   .social-card-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-  .social-card-handle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 1px; font-weight: 600; }
+  .social-card-handle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 1px; font-weight: 600; text-align: center; word-break: break-all; }
+
+  /* COLLABS */
+  .collabs-wrap { max-width: 900px; margin: 0 auto; }
+  .collab-grid { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+  .collab-card { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 32px 24px; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); width: 180px; transition: border-color 0.3s, transform 0.3s; }
+  .collab-card:hover { transform: translateY(-4px); border-color: rgba(245,197,24,0.3); }
+  .collab-card img { width: 80px; height: 80px; object-fit: contain; filter: brightness(0) invert(1); }
+  .collab-card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; color: #fff; }
+  .collab-card-city { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); text-align: center; }
 
   /* FOOTER */
   footer { background: #000; border-top: 1px solid rgba(245,197,24,0.1); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
@@ -251,6 +262,7 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
   <ul class="nav-links">
     <li><a href="#Events">Events</a></li>
     <li><a href="#Sets">Sets</a></li>
+    <li><a href="#collabs">Collabs</a></li>
     <li><a href="#Soundcloud">SoundCloud</a></li>
     <li><a href="#Social">Follow Us</a></li>
     <li><a href="#Hall of fame">Hall of fame</a></li>
@@ -307,24 +319,54 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
     <div class="upcoming-grid">
       <div class="event-card">
         <span class="event-badge">Upcoming</span>
-        <div class="event-venue">📍 Ënnert de Steiler · Luxembourg</div>
-        <div class="event-name">HOUSE TO BOUNCE</div>
-        <div class="event-date">30.05.2026 · 22:00 – 03:00</div>
-        <div class="event-lineup">DARAH · FØGGEIST · KAYLØS · PH1LZEVILL</div>
-        <a href="#" class="event-ticket">Free Entry</a>
+        <div class="event-venue">📍 The Rooftop · Luxembourg</div>
+        <div class="event-name">TERRACE SUNSET</div>
+        <div class="event-date">26.06.2026 · 19:00 – 22:00</div>
+        <div class="event-lineup">DANCE DIVINE - LUNATTACK</div>
+        <a href="https://xceed.me/fr/luxembourg/event/silent-ducks/232622" class="event-ticket">Tickets</a>
       </div>
       <div class="event-card">
         <span class="event-badge">Upcoming</span>
         <div class="event-venue">📍 The Rooftop · Luxembourg</div>
         <div class="event-name">BOILER ROOM</div>
-        <div class="event-date">26.06.2026 · 19:00 – 03:00</div>
-        <div class="event-lineup">Line-up to be announced</div>
-        <a href="#" class="event-ticket">More Info Soon</a>
+        <div class="event-date">26.06.2026 · 22:00 – 03:00</div>
+        <div class="event-lineup">BERØW - FØGGEIST - GABELA - KAYLØS - PHILZEVILL</div>
+        <a href="https://xceed.me/fr/luxembourg/event/silent-ducks/232622" class="event-ticket">Tickets</a>
       </div>
     </div>
     <div class="past-section-label" style="font-size:1rem">— Past Events —</div>
     <div class="past-grid">
-      <div class="past-item"><div class="past-item-date">Mar 2026</div><div class="past-item-name">HOUSE TO TRANCE</div><div class="past-item-venue">SAZIO</div></div>
+      <div class="past-item">
+        <img src="images/Past Events/housetobounce.jpg" alt="House to Bounce">
+        <div class="past-item-date">Jun 2026</div>
+        <div class="past-item-name">HOUSE TO BOUNCE</div>
+        <div class="past-item-venue">THE ROOFTOP</div>
+      </div>
+      <div class="past-item">
+        <img src="images/Past Events/housetotrance.jpg" alt="House to Trance">
+        <div class="past-item-date">Mar 2026</div>
+        <div class="past-item-name">HOUSE TO TRANCE</div>
+        <div class="past-item-venue">SAZIO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COLLABS -->
+<section id="collabs">
+  <div class="collabs-wrap">
+    <div class="section-header">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;color:#00b4ff;text-transform:uppercase;margin-top:4px;">COLLABORATIONS</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="collab-grid">
+      <div class="collab-card">
+        <img src="images/w4ves.png" alt="Nombre Colectivo">
+        <div class="collab-card-name">MAY 2026</div>
+        <div class="collab-card-city">Luxembourg</div>
+      </div>
     </div>
   </div>
 </section>
@@ -378,9 +420,8 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
 <!-- SOCIAL -->
 <section id="social">
   <div class="social-wrap">
-    <img class="social-tagline-img" id="socialTitle" src="" alt="Follow Us Online">
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:3px;color:rgba(255,255,255,0.3);text-transform:uppercase;margin-bottom:12px;">FOLLOW US ONLINE</div>
-    <p class="social-sub">Don't miss a single event. All sets, dates, and surprises.</p>
+    
+    <img src="images/contenido/quackbelow.png" alt="" style="max-width:400px; width:100%; height:auto; display:block; margin:24px auto 0px;">
     <div class="social-icons">
       <a href="https://instagram.com/silentducks_" target="_blank" class="social-card ig">
         <div class="social-card-icon"><img src="images/instagram_black.png" alt="Instagram" style="width:32px; height:32px; object-fit:contain; filter:brightness(0) invert(1);"></div>
@@ -392,12 +433,18 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
         <span class="social-card-label">SoundCloud</span>
         <span class="social-card-handle">Silent Ducks</span>
       </a>
-      <a href="https://tiktok.com/@silentducks" target="_blank" class="social-card tt">
+      <a href="https://tiktok.com/@silentducks_" target="_blank" class="social-card tt">
         <div class="social-card-icon"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg></div>
         <span class="social-card-label">TikTok</span>
-        <span class="social-card-handle">@silentducks</span>
+        <span class="social-card-handle">@silentducks_</span>
+      </a>
+      <a href="https://www.youtube.com/@SilentDucksOfficial" target="_blank" class="social-card yt">
+        <div class="social-card-icon"><img src="images/youtube.png" alt="YouTube" style="width:32px; height:32px; object-fit:contain; filter:brightness(0) invert(1);"></div>
+        <span class="social-card-label">YouTube</span>
+        <span class="social-card-handle">@SilentDucksOfficial</span>
       </a>
     </div>
+    <p class="social-sub">Don't miss a single event. All sets, dates, and surprises.</p>
   </div>
 </section>
 
@@ -409,7 +456,7 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
   </div>
   <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
     <div class="footer-copy">© 2026 Silent Ducks. All rights reserved.</div>
-    <div class="footer-copy">Version 0.1.1</div>
+    <div class="footer-copy">Version 0.1.2</div>
   </div>
   <div class="footer-loc">📍 Luxembourg</div>
 </footer>
@@ -422,7 +469,6 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
   setImg('heroDuck', "images/logo_transparent.png");
   setImg('heroText', lettersSrc);
   setImg('setsTitle', lettersSrc);
-  setImg('socialTitle', lettersSrc);
   setImg('footerDuck', "images/logo alargado blanco.png");
   setImg('footerText', lettersSrc);
 
