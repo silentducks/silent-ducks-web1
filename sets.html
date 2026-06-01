@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sets — Silent Ducks</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/Pato azul.ico">
 <link rel="stylesheet" href="Style.css">
+</head>
 <body>
-    
+
+<div class="cursor" id="cursor"></div>
+
+<script>
+const DUCK_B64 = "DUCK_PLACEHOLDER";
+const LETTERS_B64 = "LETTERS_PLACEHOLDER";
+const duckSrc = "data:image/png;base64," + DUCK_B64;
+const lettersSrc = "data:image/png;base64," + LETTERS_B64;
+</script>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-duck" id="navDuck" src="" alt="Silent Ducks">
+    <img class="nav-logo-text" id="navText" src="" alt="Silent Ducks">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html#collabs">Collabs</a></li>
+    <li><a href="sets.html">Sets</a></li>
+    <li><a href="halloffame.html">Hall of fame</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/silentducks_" target="_blank" title="Instagram">
+      <img src="images/instagram_black.png" alt="Instagram" style="width:20px; height:20px; object-fit:contain;">
+    </a>
+    <a href="https://soundcloud.com/silentducks" target="_blank" title="SoundCloud">
+      <img src="images/test.png" alt="SoundCloud" style="width:20px; height:40px; object-fit:contain;">
+    </a>
+    <a href="https://tiktok.com/@silentducks" target="_blank" title="TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- SETS -->
+<section id="sets" style="padding-top: 140px;">
+  <div class="sets-wrap">
+    <div class="section-header">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;color:#00b4ff;text-transform:uppercase;margin-top:4px;">THE SETS</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="genre-filters">
+      <button class="genre-btn active" onclick="filterSets(this,'all')">All</button>
+      <button class="genre-btn" onclick="filterSets(this,'house')">House</button>
+      <button class="genre-btn" onclick="filterSets(this,'techno')">Techno</button>
+      <button class="genre-btn" onclick="filterSets(this,'bounce')">Bounce</button>
+      <button class="genre-btn" onclick="filterSets(this,'trance')">Trance</button>
+      <button class="genre-btn" onclick="filterSets(this,'breaks')">Breaks</button>
+      <button class="genre-btn" onclick="filterSets(this,'other')">Other</button>
+    </div>
+    <div class="sets-grid" id="setsGrid">
+      <div class="set-card" data-genre="bounce"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#0a0020,#200010);"></div><div class="set-play">▶</div><span class="set-genre-tag">Bounce</span></div><div class="set-info"><div class="set-dj">DARAH</div><div class="set-desc">Hard Bounce · House to Bounce</div><div class="set-meta"><span class="set-event-name">House to Bounce '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="set-card" data-genre="house"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#001020,#001a10);"></div><div class="set-play">▶</div><span class="set-genre-tag">House</span></div><div class="set-info"><div class="set-dj">FØGGEIST</div><div class="set-desc">Deep House · Private Session</div><div class="set-meta"><span class="set-event-name">Forest Session '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="set-card" data-genre="techno"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#100000,#001000);"></div><div class="set-play">▶</div><span class="set-genre-tag">Techno</span></div><div class="set-info"><div class="set-dj">KAYLØS</div><div class="set-desc">Groovy Techno · Winter Rave</div><div class="set-meta"><span class="set-event-name">Winter Rave '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="set-card" data-genre="trance"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#001520,#150020);"></div><div class="set-play">▶</div><span class="set-genre-tag">Trance</span></div><div class="set-info"><div class="set-dj">PH1LZEVILL</div><div class="set-desc">Hard Trance · Deep in the Woods</div><div class="set-meta"><span class="set-event-name">Deep in the Woods '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="set-card" data-genre="breaks"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#1a1000,#001a10);"></div><div class="set-play">▶</div><span class="set-genre-tag">Breaks</span></div><div class="set-info"><div class="set-dj">DARAH b2b KAYLØS</div><div class="set-desc">Breaks & Jungle · Private Bounce</div><div class="set-meta"><span class="set-event-name">Private Bounce '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="set-card" data-genre="house"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#002010,#100020);"></div><div class="set-play">▶</div><span class="set-genre-tag">House</span></div><div class="set-info"><div class="set-dj">FØGGEIST b2b PH1LZEVILL</div><div class="set-desc">UK Garage · Silent Session</div><div class="set-meta"><span class="set-event-name">Silent Session '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+    </div>
+
+    <a href="index.html" class="btn-outline" style="display:inline-block; margin-top: 60px;">← Volver al inicio</a>
+  </div>
+</section>
+
+<script>
+  // Inject logos
+  document.getElementById('navDuck').src = "images/logo alargado blanco.png";
+  document.getElementById('navText').src = "images/Pato azul.png";
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Genre filter
+  function filterSets(btn, genre) {
+    document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.set-card').forEach(card => {
+      card.style.display = (genre === 'all' || card.dataset.genre === genre) ? 'block' : 'none';
+    });
+  }
+</script>
 </body>
 </html>

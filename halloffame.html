@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall of Fame — Silent Ducks</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/Pato azul.ico">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<script>
+const DUCK_B64 = "DUCK_PLACEHOLDER";
+const LETTERS_B64 = "LETTERS_PLACEHOLDER";
+const duckSrc = "data:image/png;base64," + DUCK_B64;
+const lettersSrc = "data:image/png;base64," + LETTERS_B64;
+</script>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-duck" id="navDuck" src="" alt="Silent Ducks">
+    <img class="nav-logo-text" id="navText" src="" alt="Silent Ducks">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html#collabs">Collabs</a></li>
+    <li><a href="sets.html">Sets</a></li>
+    <li><a href="halloffame.html">Hall of fame</a></li>
+  </ul>
+  <div class="nav-social">
+    <!-- Instagram -->
+    <a href="https://instagram.com/silentducks_" target="_blank" title="Instagram">
+      <img src="images/instagram_black.png" alt="Instagram" style="width:20px; height:20px; object-fit:contain;">
+    </a>
+    <!-- SoundCloud -->
+    <a href="https://soundcloud.com/silentducks" target="_blank" title="SoundCloud">
+      <img src="images/test.png" alt="SoundCloud" style="width:20px; height:40px; object-fit:contain;">
+    </a>
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@silentducks" target="_blank" title="TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HALL OF FAME CONTENT -->
+<section id="halloffame" style="padding-top: 140px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-header">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;color:#00b4ff;text-transform:uppercase;margin-top:4px;">HALL OF FAME</div>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Contenido aquí -->
+
+    <a href="index.html" class="btn-outline" style="display:inline-block; margin-top: 60px;">← Volver al inicio</a>
+  </div>
+</section>
+
+<script>
+  // Inject logos
+  document.getElementById('navDuck').src = "images/logo alargado blanco.png";
+  document.getElementById('navText').src = "images/Pato azul.png";
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+</script>
+</body>
+</html>
