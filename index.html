@@ -84,18 +84,10 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
     <div class="upcoming-grid">
       <div class="event-card">
         <span class="event-badge">Upcoming</span>
-        <div class="event-venue">📍 The Rooftop · Luxembourg</div>
-        <div class="event-name">TERRACE SUNSET</div>
-        <div class="event-date">26.06.2026 · 19:00 – 22:00</div>
-        <div class="event-lineup">DANCE DIVINE - LUNATTACK</div>
-        <a href="https://xceed.me/fr/luxembourg/event/silent-ducks/232622" class="event-ticket">Tickets</a>
-      </div>
-      <div class="event-card">
-        <span class="event-badge">Upcoming</span>
-        <div class="event-venue">📍 The Rooftop · Luxembourg</div>
-        <div class="event-name">BOILER ROOM</div>
+        <div class="event-venue">📍 The Roof · Luxembourg</div>
+        <div class="event-name">SUNSET TO BOILER</div>
         <div class="event-date">26.06.2026 · 22:00 – 03:00</div>
-        <div class="event-lineup">BERØW - FØGGEIST - GABELA - KAYLØS - PHILZEVILL</div>
+        <div class="event-lineup">BERØW - DANCE DIVINE - FØGGEIST - GABELA - KAYLØS - LUNATTACK - PHILZEVILL</div>
         <a href="https://xceed.me/fr/luxembourg/event/silent-ducks/232622" class="event-ticket">Tickets</a>
       </div>
     </div>
@@ -132,35 +124,11 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
         <div class="collab-card-name">MAY 2026</div>
         <div class="collab-card-city">Luxembourg</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SETS -->
-<section id="sets">
-  <div class="sets-wrap">
-    <div class="section-header">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;color:#00b4ff;text-transform:uppercase;margin-top:4px;">THE SETS</div>
-      <div class="section-line"></div>
-    </div>
-    <div class="genre-filters">
-      <button class="genre-btn active" onclick="filterSets(this,'all')">All</button>
-      <button class="genre-btn" onclick="filterSets(this,'house')">House</button>
-      <button class="genre-btn" onclick="filterSets(this,'techno')">Techno</button>
-      <button class="genre-btn" onclick="filterSets(this,'bounce')">Bounce</button>
-      <button class="genre-btn" onclick="filterSets(this,'trance')">Trance</button>
-      <button class="genre-btn" onclick="filterSets(this,'breaks')">Breaks</button>
-      <button class="genre-btn" onclick="filterSets(this,'other')">Other</button>
-    </div>
-    <div class="sets-grid" id="setsGrid">
-      <div class="set-card" data-genre="bounce"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#0a0020,#200010);"></div><div class="set-play">▶</div><span class="set-genre-tag">Bounce</span></div><div class="set-info"><div class="set-dj">DARAH</div><div class="set-desc">Hard Bounce · House to Bounce</div><div class="set-meta"><span class="set-event-name">House to Bounce '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
-      <div class="set-card" data-genre="house"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#001020,#001a10);"></div><div class="set-play">▶</div><span class="set-genre-tag">House</span></div><div class="set-info"><div class="set-dj">FØGGEIST</div><div class="set-desc">Deep House · Private Session</div><div class="set-meta"><span class="set-event-name">Forest Session '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
-      <div class="set-card" data-genre="techno"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#100000,#001000);"></div><div class="set-play">▶</div><span class="set-genre-tag">Techno</span></div><div class="set-info"><div class="set-dj">KAYLØS</div><div class="set-desc">Groovy Techno · Winter Rave</div><div class="set-meta"><span class="set-event-name">Winter Rave '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
-      <div class="set-card" data-genre="trance"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#001520,#150020);"></div><div class="set-play">▶</div><span class="set-genre-tag">Trance</span></div><div class="set-info"><div class="set-dj">PH1LZEVILL</div><div class="set-desc">Hard Trance · Deep in the Woods</div><div class="set-meta"><span class="set-event-name">Deep in the Woods '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
-      <div class="set-card" data-genre="breaks"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#1a1000,#001a10);"></div><div class="set-play">▶</div><span class="set-genre-tag">Breaks</span></div><div class="set-info"><div class="set-dj">DARAH b2b KAYLØS</div><div class="set-desc">Breaks & Jungle · Private Bounce</div><div class="set-meta"><span class="set-event-name">Private Bounce '26</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
-      <div class="set-card" data-genre="house"><div class="set-thumb"><div class="set-thumb-bg" style="background:linear-gradient(135deg,#002010,#100020);"></div><div class="set-play">▶</div><span class="set-genre-tag">House</span></div><div class="set-info"><div class="set-dj">FØGGEIST b2b PH1LZEVILL</div><div class="set-desc">UK Garage · Silent Session</div><div class="set-meta"><span class="set-event-name">Silent Session '25</span><a href="https://soundcloud.com/silentducks" target="_blank" class="set-sc-link">SC ↗</a></div></div></div>
+      <div class="collab-card">
+        <img src="images/colab/nut.png" alt="Nombre Colectivo">
+        <div class="collab-card-name">JUN 2026</div>
+        <div class="collab-card-city">Luxembourg</div>
+      </div>
     </div>
   </div>
 </section>
@@ -221,7 +189,7 @@ const lettersSrc = "data:image/png;base64," + LETTERS_B64;
   </div>
   <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
     <div class="footer-copy">© 2026 Silent Ducks. All rights reserved.</div>
-    <div class="footer-copy">Version 0.1.2</div>
+    <div class="footer-copy">Version 0.1.3</div>
   </div>
   <div class="footer-loc">📍 Luxembourg</div>
 </footer>
