@@ -191,7 +191,7 @@ section { padding: 100px 48px; }
 .social-tagline-img { height: clamp(50px, 7vw, 80px); width: auto; filter: brightness(0) invert(1); display: block; margin: 0 auto 12px; }
 .social-sub { font-size: 0.9rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 48px; max-width: 400px; margin-left: auto; margin-right: auto; }
 .social-icons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-.social-card { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 32px; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; color: #fff; transition: border-color 0.3s, transform 0.3s; width: 160px; }
+.social-card { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 28px 24px; background: var(--gray2); border: 1px solid rgba(255,255,255,0.06); text-decoration: none; color: #fff; transition: border-color 0.3s, transform 0.3s; width: 180px; }
 .social-card:hover { transform: translateY(-4px); }
 .social-card.ig:hover { border-color: rgba(225,48,108,0.5); }
 .social-card.sc:hover { border-color: rgba(255,102,0,0.5); }
@@ -200,7 +200,7 @@ section { padding: 100px 48px; }
 .social-card-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
 .social-card-icon svg { width: 32px; height: 32px; fill: #fff; }
 .social-card-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-.social-card-handle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 1px; font-weight: 600; text-align: center; word-break: break-all; }
+.social-card-handle { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 1px; font-weight: 600; text-align: center; white-space: nowrap; }
 
 /* COLLABS */
 .collabs-wrap { max-width: 1200px; margin: 0 auto; }

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Silent Ducks</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/Pato azul.ico">
+<link rel="stylesheet" href="Style.css">
+<style>
+  .contact-block { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); padding: 40px; margin-bottom: 32px; }
+  .contact-block-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; letter-spacing: 4px; text-transform: uppercase; color: #00b4ff; margin-bottom: 6px; }
+  .contact-block-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+
+  .form-row { display: flex; gap: 16px; }
+  .form-row .form-group { flex: 1; }
+  .form-group { display: flex; flex-direction: column; margin-bottom: 18px; }
+  .form-group label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 7px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea { background: #111; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Barlow', sans-serif; font-size: 1rem; padding: 12px 14px; outline: none; transition: border-color 0.2s; appearance: none; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: rgba(0,180,255,0.5); box-shadow: 0 0 12px rgba(0,180,255,0.1); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-group select option { background: #111; }
+
+  .btn-submit { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; padding: 14px 36px; background: var(--gold); color: #000; border: none; cursor: none; transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px; }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,197,24,0.4); }
+
+  @media (max-width: 600px) { .form-row { flex-direction: column; gap: 0; } }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div id="sparkles" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;"></div>
+
+<script>
+const DUCK_B64 = "DUCK_PLACEHOLDER";
+const LETTERS_B64 = "LETTERS_PLACEHOLDER";
+const duckSrc = "data:image/png;base64," + DUCK_B64;
+const lettersSrc = "data:image/png;base64," + LETTERS_B64;
+</script>
+
+<!-- NAV -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-duck" id="navDuck" src="" alt="Silent Ducks">
+    <img class="nav-logo-text" id="navText" src="" alt="Silent Ducks">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html#collabs">Collabs</a></li>
+    <li><a href="sets.html">Sets</a></li>
+    <li><a href="halloffame.html">Hall of fame</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://instagram.com/silentducks_" target="_blank" title="Instagram">
+      <img src="images/instagram_black.png" alt="Instagram" style="width:20px; height:20px; object-fit:contain;">
+    </a>
+    <a href="https://soundcloud.com/silentducks" target="_blank" title="SoundCloud">
+      <img src="images/test.png" alt="SoundCloud" style="width:20px; height:40px; object-fit:contain;">
+    </a>
+  </div>
+</nav>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top: 140px; position: relative; z-index: 1;">
+  <div style="max-width: 760px; margin: 0 auto;">
+
+    <div class="section-header">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;color:#00b4ff;text-transform:uppercase;margin-top:4px;">CONTACT</div>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- EMAIL BANNER -->
+    <div style="margin-top: 40px; margin-bottom: 40px; background: #1a1a1a; border: 1px solid rgba(0,180,255,0.2); padding: 32px 40px; display: flex; align-items: center; gap: 24px; box-shadow: 0 0 40px rgba(0,180,255,0.06);">
+      <div style="width: 48px; height: 48px; border: 1px solid rgba(0,180,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00b4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+      </div>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;">General inquiries</div>
+        <a href="https://mail.google.com/mail/?view=cm&to=Silentducksbusiness@gmail.com" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;letter-spacing:2px;color:#fff;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#00b4ff'" onmouseout="this.style.color='#fff'">Silentducksbusiness@gmail.com</a>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 60px;">
+
+      <!-- DJ SUBMISSIONS -->
+      <div class="contact-block">
+        <div class="contact-block-title">DJ Submissions</div>
+        <div class="contact-block-sub">Want to play with us? Send us your mix</div>
+        <form action="https://formspree.io/f/xdavagqk" method="POST">
+          <input type="hidden" name="_subject" value="DJ Submission — Silent Ducks">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Artist name</label>
+              <input type="text" name="dj_name" placeholder="DJ Name" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Main genre</label>
+              <select name="genre">
+                <option value="">— Select —</option>
+                <option>House</option>
+                <option>Techno</option>
+                <option>Trance</option>
+                <option>Bounce</option>
+                <option>Drum & Bass</option>
+                <option>Other, specify below</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Share with us your Art</label>
+              <input type="url" name="mix_link" placeholder="MP3, WAV, or links to SoundCloud,YouTube, etc...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell us about yourself</label>
+            <textarea name="message" placeholder="Bio, experience, previous events..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send</button>
+        </form>
+      </div>
+
+      <!-- COLLECTIVE SUBMISSIONS -->
+      <div class="contact-block">
+        <div class="contact-block-title">Collective Submissions</div>
+        <div class="contact-block-sub">Part of a collective and want to collaborate?</div>
+        <form action="https://formspree.io/f/mqeoelww" method="POST">
+          <input type="hidden" name="_subject" value="Collective Submission — Silent Ducks">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Collective name</label>
+              <input type="text" name="collective_name" placeholder="Collective Name" required>
+            </div>
+            <div class="form-group">
+              <label>Contact person</label>
+              <input type="text" name="contact_person" placeholder="Your name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>City / Country</label>
+              <input type="text" name="city" placeholder="Luxembourg, Madrid, Paris...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Website or Instagram</label>
+            <input type="text" name="social" placeholder="https://instagram.com/...">
+          </div>
+          <div class="form-group">
+            <label>Collaboration proposal</label>
+            <textarea name="message" placeholder="Tell us what you have in mind..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send</button>
+        </form>
+      </div>
+
+
+    </div>
+
+    <a href="index.html" class="btn-outline" style="display:inline-block; margin-bottom: 80px;">← Main menu</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="position: relative; z-index: 1;">
+  <div class="footer-logo">
+    <img class="footer-logo-duck" id="footerDuck" src="" alt="">
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+    <div class="footer-copy">© 2026 Silent Ducks. All rights reserved.</div>
+    <div class="footer-copy">Version 0.1.4</div>
+  </div>
+  <div class="footer-loc">📍 Luxembourg</div>
+</footer>
+
+<script>
+  // Inject logos
+  document.getElementById('navDuck').src = "images/logo alargado blanco.png";
+  document.getElementById('navText').src = "images/Pato azul.png";
+  document.getElementById('footerDuck').src = "images/logo alargado blanco.png";
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Sparkles
+  const sp = document.getElementById('sparkles');
+  for (let i = 0; i < 60; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;width:${1+Math.random()*2}px;height:${1+Math.random()*2}px;background:${Math.random()>0.5?'#f5c518':'#00b4ff'};--d:${2+Math.random()*4}s;--delay:${Math.random()*4}s;`;
+    sp.appendChild(s);
+  }
+</script>
+</body>
+</html>
