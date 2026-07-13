@@ -140,6 +140,10 @@ section { padding: 100px 48px; }
 .event-lineup { font-size: 0.85rem; color: rgba(255,255,255,0.5); letter-spacing: 1px; margin-bottom: 24px; line-height: 1.6; }
 .event-ticket { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; padding: 10px 24px; background: transparent; color: var(--gold); border: 1px solid rgba(245,197,24,0.4); text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
 .event-ticket:hover { background: var(--gold); color: #000; }
+.event-ticket-row { display: flex; gap: 8px; align-items: center; }
+.event-ticket-ig { padding: 10px 12px; }
+.event-ticket-ig img { width: 16px; height: 16px; object-fit: contain; display: block; filter: brightness(0) invert(1); transition: filter 0.2s; }
+.event-ticket-ig:hover img { filter: brightness(0); }
 
 .past-section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 6px; color: rgba(255,255,255,0.25); text-transform: uppercase; margin-bottom: 20px; }
 .past-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
