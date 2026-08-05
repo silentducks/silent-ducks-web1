@@ -232,4 +232,27 @@ footer { background: #000; border-top: 1px solid rgba(245,197,24,0.1); padding: 
   #soundcloud, #social { padding: 60px 20px; }
   footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
   .hero-corner-line { display: none; }
+
+  /* HERO */
+  .hero-pretitle { font-size: 0.7rem; letter-spacing: 4px; }
+  .hero-cta-row { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-gold, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
+
+  /* EVENTS */
+  .upcoming-grid { grid-template-columns: 1fr; }
+  .event-card { padding: 20px; }
+  .past-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* SETS */
+  .sets-grid { grid-template-columns: 1fr; }
+
+  /* SOUNDCLOUD */
+  .sc-title { font-size: 2rem; }
+
+  /* COLLABS */
+  .collab-grid { justify-content: center; }
+  .collab-card { width: 100%; max-width: 280px; }
+
+  /* SOCIAL */
+  .social-card { width: 140px; }
 }
